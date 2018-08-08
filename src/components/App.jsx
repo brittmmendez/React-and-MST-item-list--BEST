@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import DevTools from 'mobx-react-devtools';
-import { observer } from 'mobx-react'
+import { observer, inject} from 'mobx-react'
 import ItemFormView from './ItemFormView.jsx';
 import ItemListView from './ItemListView';
 import InvoiceInfoView from './InvoiceInfoView';
 import TotalView from './TotalView';
 
 @observer
+@inject("invoice")
 class App extends Component {
   render() {
     const {invoice} = this.props;
