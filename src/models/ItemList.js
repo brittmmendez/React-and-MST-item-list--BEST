@@ -1,4 +1,4 @@
-import {types, getParent} from "mobx-state-tree";
+import {types, getParent, destroy} from "mobx-state-tree";
 import Item from "./Item"
 
 const ItemList = types.model('ItemList', {
@@ -15,7 +15,8 @@ const ItemList = types.model('ItemList', {
         getParent(self, 1).markUnpaid()
     },
     remove(item) {
-        self.items.splice(self.items.indexOf(item),1)
+        // self.items.splice(self.items.indexOf(item),1)
+        destroy(item)
     }
 }));
 

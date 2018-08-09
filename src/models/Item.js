@@ -22,7 +22,19 @@ const Item = types.model('Item', {
     function remove(){
         getParent(self, 2).remove(self)
     }
-    return {increment, decrement, remove};
+
+    function changeName(newName) {
+        self.name = newName
+    }
+
+    function changePrice(newPrice) {
+        self.price = newPrice
+    }
+
+    function changeQuantity(newQuant) {
+        self.quantity = newQuant
+    }
+    return {increment, decrement, remove, changeName, changePrice, changeQuantity};
 });
 
 export default Item;
